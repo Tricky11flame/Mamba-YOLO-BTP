@@ -6,7 +6,6 @@ from pathlib import Path
 
 import torch
 # torch.serialization.add_safe_globals([DetectionModel])
-torch.serialization.add_safe_globals([ultralytics.nn.tasks.DetectionModel])
 import torch.nn as nn
 
 from ultralytics.nn.modules import (
@@ -74,7 +73,7 @@ try:
     import thop
 except ImportError:
     thop = None
-
+torch.serialization.add_safe_globals([ultralytics.nn.tasks.DetectionModel])
 
 class BaseModel(nn.Module):
     """The BaseModel class serves as a base class for all the models in the Ultralytics YOLO family."""
