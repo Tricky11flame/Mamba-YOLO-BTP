@@ -5,7 +5,7 @@ from copy import deepcopy
 from pathlib import Path
 
 import torch
-torch.serialization.add_safe_globals([DetectionModel])
+# torch.serialization.add_safe_globals([DetectionModel])
 import torch.nn as nn
 
 from ultralytics.nn.modules import (
