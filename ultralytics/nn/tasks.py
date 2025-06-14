@@ -6,7 +6,6 @@ from pathlib import Path
 
 import torch
 import torch.nn as nn
-from ultralytics.nn.tasks import DetectionModel
 
 from ultralytics.nn.modules import (
     AIFI,
@@ -732,6 +731,7 @@ def torch_safe_load(weight):
         (dict): The loaded PyTorch model.
     """
     from ultralytics.utils.downloads import attempt_download_asset
+    from ultralytics.nn.tasks import DetectionModel
 
     check_suffix(file=weight, suffix=".pt")
     file = attempt_download_asset(weight)  # search online if missing locally
